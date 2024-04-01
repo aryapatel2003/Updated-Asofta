@@ -1,0 +1,12 @@
+
+// @include border-radius(50%);
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+  }
+
+ /* @include transitiont3s; */
+@mixin transitiont3s {
+    -webkit-transition: 0.3s ease; -moz-transition: 0.3s ease; -o-transition: 0.3s ease; -ms-transition: 0.3s ease; transition: 0.3s ease;
+} 

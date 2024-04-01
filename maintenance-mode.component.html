@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./maintenance-mode.component.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+    </style>
+</head>
+
+<body>
+    <section class="asofta_section">
+        <div class="asofta_general_maintance">
+            <!-- ============button_portion========== -->
+            <div class="button_portion">
+                <div class="access_btn_portion">
+                    <a (click)="back()" class="access_btn_img">
+                        <img src="./assets/assets/images/new_images/back-arrow.jpg" alt class="img-fluid">
+                    </a>
+                    <a class="access_btn">BACK
+                    </a>
+                </div>
+
+                <div class="access_btn_portion">
+                    <a (click)="restart()" class="access_btn_img">
+                        <img src="./assets/assets/images/new_images/refresh-arrow - Copy.png" alt class="img-fluid">
+                    </a>
+                    <a class="access_btn">RESTART
+                    </a>
+                </div>
+            </div>
+            <div class="button_portion">
+                <div class="access_btn_portion">
+                    <a (click)="shutdown()" class="access_btn_img">
+                        <img src="./assets/assets/images/new_images/on-off-button - Copy.png" alt class="img-fluid">
+                    </a>
+                    <a class="access_btn">SHUT DOWN
+                    </a>
+                </div>
+                <div class="access_btn_portion">
+                    <a (click)="technicianMode()" class="access_btn_img">
+                        <img src="./assets/assets/images/new_images/engineer (1) - Copy.png" alt class="img-fluid">
+                    </a>
+                    <a class="access_btn"> TECHNICIAN MODE</a>
+                </div>
+                <div class="access_btn_portion">
+                    <a (click)="hardResetPressed()" class="access_btn_img">
+                        <img src="./assets/assets/images/new_images/conversion-settings - Copy.png" alt
+                            class="img-fluid">
+                    </a>
+                    <a class="access_btn">HARD RESET
+                    </a>
+                </div>
+                <div class="access_btn_portion">
+                    <a (click)="changeLocation()" class="access_btn_img">
+                        <img src="./assets/assets/images/new_images/changelocation_img.png" alt class="img-fluid">
+                    </a>
+                    <a class="access_btn">CHANGE LOCATION
+                    </a>
+                </div>
+            </div>
+
+            <!-- ===============Machine parts===========-->
+            <div class="machine_parts">
+                <div class="machine_portion common">
+                    <div class="machine_parts_portion">
+                        <!-- <span *ngFor="let error of currentErrors" > -->
+                        <h2 class="m_parts_name">Conveyor Belt</h2>
+                        <div class="m_parts_access">
+                            <div class="machine_image_btn">
+                                <img src="./assets/assets/images/new_images/maintenance.FC_LEFT_DOCK_ROTATION.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button">
+                                        <!-- <div class="p_btn"> -->
+                                        <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[0].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                        currentErrors[0].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                        currentErrors[0].errorTypeOperationModel[1].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[0].plcRegisterModel.name
+                                                    )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - left-copy.png"
+                                                alt class="img-fluid">
+                                        </a>
+                                        <a class="p_btn" (click)="doStopOperation(currentErrors[0])">
+                                            <img src="./assets/assets/images/new_images/image (70) copy 1.png" alt
+                                                class="img-fluid">
+                                        </a>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[0].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                        currentErrors[0].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                        currentErrors[0].errorTypeOperationModel[0].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[0].plcRegisterModel.name
+                                                    )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="m_text">CONVEYOR
+                                CONTROL
+                            </span>
+                            <div class="machine_image_btn">
+                                <img src="./assets/assets/images/new_images/maintenance.LOADCELL_ERROR.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button ">
+                                        <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[2].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                        currentErrors[2].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                        currentErrors[2].errorTypeOperationModel[0].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[2].plcRegisterModel.name
+                                                    )">
+                                            <img src="./assets/assets/images/new_images/saw-half-cogwheel-symbol - Copy.png"
+                                                alt class="img-fluid">
+                                        </a>
+
+                                        <input type="text" class="input_bar" #myInput>
+                                        <!-- <form class="mt-5" [formGroup]="checkoutForm">
+                                                <div class="form-group">
+                                                    <input type="test" class="form-control" formControlName="value">
+                                                </div>
+                                             </form> -->
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[2].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                        currentErrors[2].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                        myInput.value,
+                                                        false,
+                                                        null,
+                                                        currentErrors[2].plcRegisterModel.name
+                                                    )">
+                                            <img src="./assets/assets/images/new_images/compass-tool-variant - Copy.png"
+                                                alt class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="lce_btn1">TARE</span>
+                            <span class="m_text">LOADCELL CONTROL </span>
+                            <span class="lce_btn2">CALIBRATE</span>
+
+                            <div class="sensors machine_image_btn">
+                                <div class="entry_sensor">
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[0].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[0].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+                                    <span class="sensor_btn1">Bottle Entry</span>
+
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[1].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[1].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+                                    <span class="m_text sensor_btn2">Image Sensor</span>
+
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[2].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[2].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+                                    <span class="sensor_btn3">Separator Entry</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="machine_parts_portion separator_portion">
+                        <h2 class="m_parts_name">Door Sensor </h2>
+                        <div class="m_parts_access door_sens_portion" style="border: none;">
+                            <div class="d_sens">
+                                <div class="sensors machine_image_btn fbd">
+                                    <div class="entry_sensor">
+                                        <a class="p_btn">
+                                            <div *ngIf="sensorDataModels[8].value==true" class="round1"></div>
+                                            <div *ngIf="sensorDataModels[8].value==false" class="round"></div>
+                                            <!-- <div class="round1"></div> -->
+                                        </a>
+                                    </div>
+                                    <div class="entry_sensor">
+                                        <a class="p_btn">
+                                            <div *ngIf="sensorDataModels[11].value==true" class="round1"></div>
+                                            <div *ngIf="sensorDataModels[11].value==false" class="round"></div>
+                                            <!-- <div class="round1"></div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="ftd_text">Front Top Door</span>
+                                <span class="bd_text">Back Door</span>
+
+                                <div class="sensors machine_image_btn lrd">
+                                    <div class="entry_sensor">
+                                        <a class="p_btn">
+                                            <div *ngIf="sensorDataModels[10].value==true" class="round1"></div>
+                                            <div *ngIf="sensorDataModels[10].value==false" class="round"></div>
+                                            <!-- <div class="round1"></div> -->
+                                        </a>
+                                    </div>
+                                    <div class="entry_sensor">
+                                        <a class="p_btn">
+                                            <div *ngIf="sensorDataModels[13].value==true" class="round1"></div>
+                                            <div *ngIf="sensorDataModels[13].value==false" class="round"></div>
+                                            <!-- <div class="round1"></div> -->
+                                        </a>
+                                    </div>
+                                </div>
+                                <span class="ld_text">Left Door</span>
+                                <span class="rd_text">Right Door</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="machine_portion common">
+                    <div class="machine_parts_portion">
+                        <div class="parts_head_portion">
+                            <h2 class="m_parts_name shredder_name">Glass
+                                Shredder</h2>
+                            <a class="p_btn">
+                                <div *ngIf="sensorDataModels[5].value==true" class="round1"></div>
+                                <div *ngIf="sensorDataModels[5].value==false" class="round2"></div>
+                                <!-- <div class="round1"></div> -->
+                            </a>
+                        </div>
+                        <span class="fd_text">FEEDBACK SENSOR</span>
+                        <div class="m_parts_access">
+                            <div class="machine_image_btn">
+
+                                <img src="./assets/assets/images/new_images/maintenance.FC_RIGHT_DOCK_ROTATION.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button">
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[8].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                    currentErrors[8].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                    currentErrors[8].errorTypeOperationModel[1].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[8].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - left-copy.png"
+                                                alt class="img-fluid">
+                                        </a>
+
+                                        <button class="p_btn"
+                                            *ngIf="currentErrors[8].errorTypeOperationModel[2].plcRegisterModel.address == undefined">
+                                            <a class="btn" (click)="doStopOperation(currentErrors[8])">
+                                                <img src="./assets/assets/images/new_images/image (70) copy 1.png" alt
+                                                    class="img-fluid">
+                                            </a>
+                                        </button>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[8].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                    currentErrors[8].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                    currentErrors[8].errorTypeOperationModel[0].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[8].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="m_text">POWER
+                                TRANSMISSION ERROR / <br>SHREDDER JAM</span>
+                            <div class="resolve_btn"
+                                *ngIf="currentErrors[8].status == 2 && currentErrors[8].resetInMaintenance">
+                                <button class="btn1" (click)="doResolve(currentErrors[8])"><a>Resolve</a></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="machine_parts_portion">
+                        <div class="parts_head_portion">
+                            <h2 class="m_parts_name shredder_name">Aluminium
+                                Shredder</h2>
+                            <a class="p_btn">
+                                <div *ngIf="sensorDataModels[7].value==true" class="round1"></div>
+                                <div *ngIf="sensorDataModels[7].value==false" class="round2"></div>
+                                <!-- <div class="round1"></div> -->
+                            </a>
+                        </div>
+                        <span class="fd_text">FEEDBACK SENSOR</span>
+                        <div class="m_parts_access">
+                            <div class="machine_image_btn">
+
+                                <img src="./assets/assets/images/new_images/maintenance.FC_RIGHT_DOCK_ROTATION.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button">
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[6].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                    currentErrors[6].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                    currentErrors[6].errorTypeOperationModel[1].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[6].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - left-copy.png"
+                                                alt class="img-fluid">
+                                        </a>
+
+                                        <button class="p_btn"
+                                            *ngIf="currentErrors[6].errorTypeOperationModel[2].plcRegisterModel.address == undefined">
+                                            <a (click)="doStopOperation(currentErrors[6])">
+                                                <img src="./assets/assets/images/new_images/image (70) copy 1.png" alt
+                                                    class="img-fluid">
+                                            </a>
+                                        </button>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[6].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                    currentErrors[6].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                    currentErrors[6].errorTypeOperationModel[0].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[6].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="m_text">POWER
+                                TRANSMISSION ERROR / <br>SHREDDER JAM</span>
+                            <div class="resolve_btn"
+                                *ngIf="currentErrors[6].status == 2 && currentErrors[6].resetInMaintenance">
+                                <button class="btn1" (click)="doResolve(currentErrors[6])"><a>Resolve</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="machine_parts_portion">
+                        <div class="parts_head_portion">
+                            <h2 class="m_parts_name shredder_name">Plastic
+                                Shredder</h2>
+
+                            <a class="p_btn">
+                                <div *ngIf="sensorDataModels[6].value==true" class="round1"></div>
+                                <div *ngIf="sensorDataModels[6].value==false" class="round2"></div>
+                                <!-- <div class="round1"></div> -->
+                            </a>
+                        </div>
+                        <span class="fd_text">FEEDBACK SENSOR</span>
+
+                        <div class="m_parts_access" style="border: none;">
+                            <div class="machine_image_btn">
+                                <div class="m_img">
+                                    <img src="./assets/assets/images/new_images/maintenance.FC_RIGHT_DOCK_ROTATION.png"
+                                        alt class="img-fluid">
+                                </div>
+                                <div class="process_button_text">
+                                    <div class="process_button">
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[4].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                    currentErrors[4].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                    currentErrors[4].errorTypeOperationModel[1].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[4].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - left-copy.png"
+                                                alt class="img-fluid">
+                                        </a>
+
+                                        <button class="p_btn"
+                                            *ngIf="currentErrors[4].errorTypeOperationModel[2].plcRegisterModel.address == undefined">
+                                            <a (click)="doStopOperation(currentErrors[4])">
+                                                <img src="./assets/assets/images/new_images/image (70) copy 1.png" alt
+                                                    class="img-fluid">
+                                            </a>
+                                        </button>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[4].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                    currentErrors[4].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                    currentErrors[4].errorTypeOperationModel[0].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[4].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/play_icon_134504 - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="m_text">POWER
+                                TRANSMISSION ERROR / <br>SHREDDER JAM</span>
+                            <div class="resolve_btn"
+                                *ngIf="currentErrors[4].status == 2 && currentErrors[4].resetInMaintenance">
+                                <button class="btn1" (click)="doResolve(currentErrors[4])"><a>Resolve</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="machine_portion common">
+                    <div class="machine_parts_portion">
+                        <div class="parts_head_portion">
+                            <h2 class="m_parts_name shredder_name">GLASS
+                                SORTER</h2>
+                        </div>
+                        <div class="m_parts_access">
+                            <div class="machine_image_btn sorter_sens">
+                                <div class="entry_sensor gss">
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[16].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[16].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[17].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[17].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="gs_btn1">OPEN</span>
+                            <span class="m_text sens_m_text">SORTER SENSOR</span>
+                            <span class="gs_btn2">CLOSE</span>
+                            <div class="machine_image_btn">
+
+                                <img src="./assets/assets/images/new_images/maintenance.FC_RIGHT_DOCK_ROTATION.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button gateway_error_btn">
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[18].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                    currentErrors[18].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                    currentErrors[18].errorTypeOperationModel[1].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[18].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/glass bottal.png" alt
+                                                class="img-fluid">
+                                        </a>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[18].errorTypeOperationModel[2].plcRegisterModel.type.key,
+                                                    currentErrors[18].errorTypeOperationModel[2].plcRegisterModel.address,
+                                                    currentErrors[18].errorTypeOperationModel[2].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[18].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/close - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="flap_error_1">GLASS</span>
+                            <span class="m_text">FLAP ERROR</span>
+                            <span class="flap_error_2">HOME</span>
+                            <div class="resolve_btn"
+                                *ngIf="currentErrors[18].status == 2 && currentErrors[18].resetInMaintenance">
+                                <button class="btn1" (click)="doResolve(currentErrors[18])"><a>Resolve</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="machine_parts_portion">
+                        <div class="parts_head_portion">
+                            <h2 class="m_parts_name shredder_name">GATEWAY</h2>
+                        </div>
+                        <div class="m_parts_access">
+                            <div class="machine_image_btn sorter_sens">
+                                <div class="entry_sensor gss">
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[3].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[3].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[4].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[4].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="g_btn1">OPEN</span>
+                            <span class="m_text sens_m_text">SORTER DOOR
+                                SENSOR</span>
+                            <span class="g_btn2">CLOSE</span>
+                            <div class="machine_image_btn">
+
+                                <img src="./assets/assets/images/new_images/maintenance.FC_RIGHT_DOCK_ROTATION.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button gateway_error_btn">
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[16].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                    currentErrors[16].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                    currentErrors[16].errorTypeOperationModel[0].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[16].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/open door.png" alt
+                                                class="img-fluid">
+                                        </a>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[16].errorTypeOperationModel[1].plcRegisterModel.type.key,
+                                                    currentErrors[16].errorTypeOperationModel[1].plcRegisterModel.address,
+                                                    currentErrors[16].errorTypeOperationModel[1].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[16].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/close - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="gateway_error_1">OPEN</span>
+                            <span class="m_text">GATEWAY ERROR</span>
+                            <span class="gateway_error_2">CLOSE</span>
+                            <div class="resolve_btn"
+                                *ngIf="currentErrors[16].status == 2 && currentErrors[16].resetInMaintenance">
+                                <button class="btn1" (click)="doResolve(currentErrors[16])"><a>Resolve</a></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="machine_parts_portion">
+                        <div class="parts_head_portion">
+                            <h2 class="m_parts_name shredder_name">PLASTIC
+                                SORTER </h2>
+                        </div>
+                        <div class="m_parts_access" style="border: none;">
+                            <div class="machine_image_btn sorter_sens">
+                                <div class="entry_sensor gss">
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[14].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[14].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+
+                                    <a class="p_btn">
+                                        <div *ngIf="sensorDataModels[15].value==true" class="round1"></div>
+                                        <div *ngIf="sensorDataModels[15].value==false" class="round2"></div>
+                                        <!-- <div class="round1"></div> -->
+                                    </a>
+                                </div>
+                            </div>
+                            <span class="ps_btn1">OPEN</span>
+                            <span class="m_text sens_m_text">SORTER SENSOR</span>
+                            <span class="ps_btn2">CLOSE</span>
+                            <div class="machine_image_btn">
+
+                                <img src="./assets/assets/images/new_images/maintenance.FC_RIGHT_DOCK_ROTATION.png" alt
+                                    class="m_img img-fluid">
+
+                                <div class="process_button_text">
+                                    <div class="process_button gateway_error_btn">
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[17].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                    currentErrors[17].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                    currentErrors[17].errorTypeOperationModel[0].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[17].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/plastic-bottle (1) - storage bin.png"
+                                                alt class="img-fluid">
+                                        </a>
+
+                                        <a class="p_btn" (click)="doOperation(
+                                                    currentErrors[17].errorTypeOperationModel[2].plcRegisterModel.type.key,
+                                                    currentErrors[17].errorTypeOperationModel[2].plcRegisterModel.address,
+                                                    currentErrors[17].errorTypeOperationModel[2].operationValue,
+                                                    false,
+                                                    null,
+                                                    currentErrors[17].plcRegisterModel.name
+                                                )">
+                                            <img src="./assets/assets/images/new_images/close - Copy.png" alt
+                                                class="img-fluid">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="flap_error_3">PLASTIC</span>
+                            <span class="m_text">FLAP ERROR</span>
+                            <span class="flap_error_4">HOME</span>
+                            <div class="resolve_btn"
+                                *ngIf="currentErrors[17].status == 2 && currentErrors[17].resetInMaintenance">
+                                <button class="btn1" (click)="doResolve(currentErrors[17])"><a>Resolve</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="storage_portion">
+                    <div class="parts_head_portion">
+                        <span class="storage_name">Bin
+                            Reset
+                            / Printer Roll</span>
+                    </div>
+                    <div class="machine_portion">
+                        <div class="machine_parts_portion">
+                            <div class="m_parts_access">
+                                <div class="machine_image_btn">
+
+                                    <img src="./assets/assets/images/new_images/maintenance.PLASTIC_BIN_FULL_COUNT.png"
+                                        alt class="m_img img-fluid">
+
+                                    <div class="process_button_text">
+                                        <div class="process_button">
+                                            <div class="storage_count">
+                                                <span
+                                                    *ngIf="currentErrors[21]?.currentCount==currentErrors[21]?.errorValue"
+                                                    class="error_storage_number">{{currentErrors[21]?.currentCount}}/{{currentErrors[21]?.errorValue}}</span>
+                                                <span
+                                                    *ngIf="currentErrors[21]?.currentCount!=currentErrors[21]?.errorValue"
+                                                    class="storage_number">{{currentErrors[21]?.currentCount}}/{{currentErrors[21]?.errorValue}}</span>
+                                            </div>
+
+                                            <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[21].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                        currentErrors[21].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                        currentErrors[21].errorTypeOperationModel[0].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[21].plcRegisterModel.name
+                                                    )">
+                                                <img src="./assets/assets/images/new_images/circular-clockwise-arrow - Copy.png"
+                                                    alt class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="m_text">PLASTIC STORAGE BIN
+                                        FULL </span>
+                                </div>
+                                <div class="machine_image_btn">
+
+                                    <img src="./assets/assets/images/new_images/maintenance.GLASS_BIN_FULL_COUNT.png"
+                                        alt class="m_img img-fluid">
+
+                                    <div class="process_button_text">
+                                        <div class="process_button">
+                                            <div class="storage_count">
+                                                <span
+                                                    *ngIf="currentErrors[22]?.currentCount==currentErrors[22]?.errorValue"
+                                                    class="error_storage_number">{{currentErrors[22]?.currentCount}}/{{currentErrors[22]?.errorValue}}</span>
+                                                <span
+                                                    *ngIf="currentErrors[22]?.currentCount!=currentErrors[22]?.errorValue"
+                                                    class="storage_number">{{currentErrors[22]?.currentCount}}/{{currentErrors[22]?.errorValue}}</span>
+                                            </div>
+
+                                            <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[22].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                        currentErrors[22].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                        currentErrors[22].errorTypeOperationModel[0].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[22].plcRegisterModel.name
+                                                    )">
+                                                <img src="./assets/assets/images/new_images/circular-clockwise-arrow - Copy.png"
+                                                    alt class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="m_text">GLASS STORAGE BIN
+                                        FULL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="machine_parts_portion separator_portion">
+                            <div class="m_parts_access" style="border: none;">
+                                <div class="machine_image_btn">
+
+                                    <img src="./assets/assets/images/new_images/maintenance.ALUMINIUMN_BIN_FULL_COUNT.png"
+                                        alt class="m_img img-fluid">
+
+                                    <div class="process_button_text">
+                                        <div class="process_button">
+                                            <div class="storage_count">
+                                                <span
+                                                    *ngIf="currentErrors[23]?.currentCount==currentErrors[23]?.errorValue"
+                                                    class="error_storage_number">{{currentErrors[23]?.currentCount}}/{{currentErrors[23]?.errorValue}}</span>
+                                                <span
+                                                    *ngIf="currentErrors[23]?.currentCount!=currentErrors[23]?.errorValue"
+                                                    class="storage_number">{{currentErrors[23]?.currentCount}}/{{currentErrors[23]?.errorValue}}</span>
+                                            </div>
+
+                                            <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[23].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                        currentErrors[23].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                        currentErrors[23].errorTypeOperationModel[0].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[23].plcRegisterModel.name
+                                                    )">
+                                                <img src="./assets/assets/images/new_images/circular-clockwise-arrow - Copy.png"
+                                                    alt class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="m_text">METAL CANS STORAGE
+                                        BIN
+                                        FULL</span>
+                                </div>
+                                <div class="machine_image_btn">
+                                    <div class=" print_paper_m_img">
+                                        <img src="./assets/assets/images/new_images/maintenance.PRINTER_ROLE_STATUS.png"
+                                            alt class="m_img img-fluid">
+                                    </div>
+                                    <div class="process_button_text">
+                                        <div class="process_button">
+                                            <div class="storage_count">
+                                                <span
+                                                    *ngIf="currentErrors[20]?.currentCount==currentErrors[20]?.errorValue"
+                                                    class="error_storage_number">{{currentErrors[20]?.currentCount}}/{{currentErrors[20]?.errorValue}}</span>
+                                                <span
+                                                    *ngIf="currentErrors[20]?.currentCount!=currentErrors[20]?.errorValue"
+                                                    class="storage_number">{{currentErrors[20]?.currentCount}}/{{currentErrors[20]?.errorValue}}</span>
+                                            </div>
+
+                                            <a class="p_btn" (click)="doOperation(
+                                                        currentErrors[20].errorTypeOperationModel[0].plcRegisterModel.type.key,
+                                                        currentErrors[20].errorTypeOperationModel[0].plcRegisterModel.address,
+                                                        currentErrors[20].errorTypeOperationModel[0].operationValue,
+                                                        false,
+                                                        null,
+                                                        currentErrors[20].plcRegisterModel.name
+                                                    )">
+                                                <img src="./assets/assets/images/new_images/circular-clockwise-arrow - Copy.png"
+                                                    alt class="img-fluid">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="m_text">PRINT PAPER HAS
+                                        FINISHED PLEASE CONTACT <br> STORE
+                                        MANAGER TO
+                                        REFILL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="popup" *ngIf="changeLocationPopup">
+            <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+            <div class="popup-body">
+                <div class="popup-title">
+                    <span>Change Location</span>
+                    <button type="button" class="close-popup" (click)="closePopupFun()">×</button>
+                </div>
+
+                <form class="mt-5" [formGroup]="checkoutForm" (ngSubmit)="passwordSubmit()">
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="custom-btn green-btn small-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup" *ngIf="hardResetButtonPopup">
+            <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+            <div class="popup-body">
+                <div class="popup-title">
+                    <span>Hard Reset</span>
+                    <button type="button" class="close-popup" (click)="closePopupFun()">×</button>
+                </div>
+
+                <form class="mt-5" [formGroup]="checkoutForm" (ngSubmit)="hardResetSubmit()">
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="custom-btn green-btn small-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup" *ngIf="glassResetButtonPopup">
+            <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+            <div class="popup-body">
+                <div class="popup-title">
+                    <span>Hard Reset For Glass</span>
+                    <button type="button" class="close-popup" (click)="closePopupFun()">×</button>
+                </div>
+
+                <form class="mt-5" [formGroup]="checkoutForm" (ngSubmit)="glassResetSubmit()">
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="custom-btn green-btn small-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup" *ngIf="aluResetButtonPopup">
+            <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+            <div class="popup-body">
+                <div class="popup-title">
+                    <span>Hard Reset For Aluminium</span>
+                    <button type="button" class="close-popup" (click)="closePopupFun()">×</button>
+                </div>
+
+                <form class="mt-5" [formGroup]="checkoutForm" (ngSubmit)="aluResetSubmit()">
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="custom-btn green-btn small-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup" *ngIf="passwordIncorrectPopup">
+            <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+            <div class="popup-body">
+                <div class="text-center">
+                    <img width="250px" src="./assets/assets/images/error.gif" class="your-voucher-pice" alt="">
+                </div>
+                <div class="text-center errorMsg">
+                    {{binFullError | translate }}
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="custom-btn green-btn small-btn"
+                        (click)="closePopupFun()">Close</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Start Virtual Keybord popup -->
+    <!-- <div class="popup2" *ngIf="iskeyboardPopupOpen">
+        <button type="button" class="popup-bg" (click)="closeKeyBoard()"></button>
+        <div class="popup-body">
+            <div class="popup-title">
+                <span style="font-weight: 700;">Virtual Keyboard</span>
+                <button type="button" class="close-popup" (click)="closeKeyBoard()">×</button>
+            </div>
+            <div  class="numpad">
+                <div *ngFor="let row of keyboardRows">
+                  <button *ngFor="let key of row" (click)="appendToInput(key)">{{ key }}</button>
+                  <button *ngIf="row[row.length-1] == 0" (click)="backspace()">Backspace</button>
+                </div>
+              </div>
+        </div>
+    </div> -->
+    <!-- End Virtual Keybord popup -->
+</body>
+
+</html>

@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <section class="asofta_tecnician">
+        <div class="asofta_technician_mode">
+            <div class="top_portion">
+                <!-- <div class="logo">
+                    <a href="#">
+                        <img src="assets/images/new_images/logoForm (1).png" alt="ASOFTA" class="img-fluid">
+                    </a>
+                </div> -->
+                <div class="top_title">
+                    <div class="heading_portion">
+                        <span class="top_heading">Technician Mode</span>
+                    </div>
+                    <div class="line">
+                        <span class="under_line"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button Portion=============== -->
+
+            <div class="button_portion">
+                <div class="access_btn_portion">
+                    <div class="access_btn_img">
+                        <a (click)="backButton()">
+                            <img src="assets/images/new_images/back-arrow.jpg" alt class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="access_btn">
+                        <button class="btn touch">
+                            <a>BACK
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <!-- <div class="access_btn_portion">
+                    <div class="access_btn_img">
+                        <a href="#">
+                            <img src="assets/images/new_images/hand-icon-vector-21679703.jpg" alt class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="access_btn">
+                        <button class="btn touch">
+                            <a href="#">STOP
+                            </a>
+                        </button>
+                    </div>
+                </div> -->
+                <div class="access_btn_portion">
+                    <div class="access_btn_img">
+                        <a (click)="restart()">
+                            <img src="assets/images/new_images/refresh-arrow - Copy.png" alt class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="access_btn">
+                        <button class="btn touch">
+                            <a>RESTART
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <div class="access_btn_portion">
+                    <div class="access_btn_img">
+                        <a (click)="shutdown()">
+                            <img src="assets/images/new_images/on-off-button - Copy.png" alt class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="access_btn">
+                        <button class="btn touch">
+                            <a>SHUT DOWN
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        <div class="asofta__tect">
+            <div style="margin: 20px;">
+                <!-- ======Machine Information====== -->
+            <div class="machine_info">
+                <div class="mi_portion">
+                    <div class="main_img">
+                        <a href="#">
+                            <img src="assets/images/new_images/processor - Copy.png" alt="ASOFTA"
+                                class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="main_title">
+                        <div class="mi_heading_portion">
+                            <span class="mi_heading">Machine Information</span>
+                        </div>
+                        <div class="main_line">
+                            <span class="mi_under_line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi_text">
+                    <div class="mi_text_1">
+                        <p class="mi_details"> <span class="details_name">MACHINE CREATION DATE:</span> <span
+                                class="details">{{machineView.createDate*1000 | date :'yyyy-MM-dd'  }}</span><br>
+                        <p class="mi_details"> <span class="details_name">CUSTOMER NAME :</span> <span
+                                class="details">{{machineView.customerName}}</span><br>
+                        <p class="mi_details"> <span class="details_name">BRANCH NAME :</span> <span
+                                class="details">{{machineView.branchName}}</span><br>
+                        <p class="mi_details"> <span class="details_name">BRANCH ID :</span> <span
+                                class="details">{{machineView.branchId}}</span><br>
+                        <p class="mi_details"> <span class="details_name">MACHINE NO. :</span> <span
+                                class="details">{{machineView.branchViseMachineNumber}}</span><br>
+                    </div>
+                    <div class="mi_text_2">
+                        <p class="mi_details"> <span class="details_name">MACHINE ID :</span> <span
+                                class="details">{{machineView.machineId}}</span><br>
+                        <p class="mi_details"> <span class="details_name">OUT OF SERVICE DATE :</span> <span
+                                class="details">{{machineView.lastUpdateDate*1000 | date :'yyyy-MM-dd' }}</span><br>
+                        <!-- <p class="mi_details"> <span class="details_name">CHANGE LOCATION:</span> <span
+                                class="details">{{machineView.machineId}}</span><br> -->
+                        <p class="mi_details"> <span class="details_name">LAST UPDATED DATE :</span> <span
+                                class="details">{{machineView.lastUpdateDate*1000 | date:'yyyy-MM-dd' }}</span><br>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ====capacity===== -->
+            <div class="capacity_portion">
+                <div class="capacity_part">
+                    <div class="main_img">
+                        <a href="#">
+                            <img src="assets/images/new_images/4412977.png" alt="ASOFTA"
+                                class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="main_title">
+                        <div class="mi_heading_portion">
+                            <span class="mi_heading">Capacity</span>
+                        </div>
+                        <div class="main_line">
+                            <span class="mi_under_line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-off">
+                    <a class="on-off-btn" href="#">
+                        PLASTIC : ON / OFF
+                    </a>
+                    <a class="on-off-btn" href="#">
+                        GLASS : OFF
+                    </a>
+                    <a class="on-off-btn" href="#">
+                        AlUMINIUM : ON
+                    </a>
+                </div>
+               
+
+                <div class="capacity_count">
+                    
+                    <input type="checkbox" id="Glass" (change)="glassButtonChanged($event.target.checked)">
+                    <label for="Glass" [ngClass]="{'active': this.machineCapacityView.isGlassOff}">Glass</label>
+                    <input type="checkbox" id="Plastic" (change)="plasticButtonChanged($event.target.checked)">
+                    <label for="Plastic" [ngClass]="{'active': this.machineCapacityView.isPlasticOff}">Plastic</label>
+                    <input type="checkbox" id="Aluminiumn" (change)="aluButtonChanged($event.target.checked)">
+                    <label for="Aluminiumn" [ngClass]="{'active':this.machineCapacityView.isAluOff}">Aluminiumn</label>
+
+
+                    <div class="objects">
+                        <div class="capacity_image_btn">
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/plastic-bottle (1) - Copy.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineCapacityView.plasticCapacity" (click)="openKeyboard('capacityplasticCapacity')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c_text">
+                                        STORAGE CAPACITY OF <br>
+                                        PLASTIC BIN
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/glass bottal - storage bin.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineCapacityView.glassCapacity" (click)="openKeyboard('capacityglassCapacity')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        STORAGE CAPACITY OF <br>
+                                        GLASS BIN
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/104711546-beer-can-patch-alu.jpg" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineCapacityView.aluCapacity" (click)="openKeyboard('capacityaluCapacity')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        STORAGE CAPACITY OF <br>
+                                        ALLUMINIUM BIN
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="capacity_image_btn capacity_part_2">
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/letter - Copy.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineCapacityView.printCapacity" (click)="openKeyboard('capacityprintCapacity')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        PRINTER PAPER CAPACITY
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/employee-cards - Copy.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineCapacityView.maxTransaction" (click)="openKeyboard('capacitymaxTransaction')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        MAXIMUM NUMBER OF<br> CONTAINER 
+                                        ALLOWED <br> IN ONE TRANSACTION
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/autocleaning - Copy.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineCapacityView.maxAutoCleaning" (click)="openKeyboard('capacitymaxAutoCleaning')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        NUMBER OF CONTAINERS <br>FOR AUTOCLEANING
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="capacity_sub_btn">
+                <a (click)="updateCapacity()" >
+                    <button class="submit sub--btn" id="sub--btn">update</button>
+                </a>
+            </div>
+
+
+
+            <div class="capacity_portion">
+                <div class="capacity_part">
+                    <div class="main_img">
+                        <a href="#">
+                            <img src="assets/images/new_images/sensors.png" alt="ASOFTA"
+                                class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="main_title">
+                        <div class="mi_heading_portion">
+                            <span class="mi_heading">Sensors</span>
+                        </div>
+                        <div class="main_line">
+                            <span class="mi_under_line"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="capacity_count">
+                    <div class="objects">
+                        <div class="capacity_image_btn">
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/sensor.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineSensorView.s1" (click)="openKeyboard('sensors1')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="c_text">
+                                        S1 Sensor
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/sensor.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineSensorView.s2" (click)="openKeyboard('sensors2')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        S2 Sensor
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="object_info">
+                                <div class="object_img">
+                                    <img src="assets/images/new_images/sensor.png" alt class="img-fluid">
+                                </div>
+                                <div class="capacity_count_text">
+                                    <div class="capacity_container">
+                                        <div>
+                                            <div style="padding: 10px;">
+                                                <div class="input_bar" >
+                                                    <input type="text"[(ngModel)]="machineSensorView.s3" (click)="openKeyboard('sensors3')">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="c_p_btn">
+                                            <button class="btn wtite_text">
+                                                <a href="#">
+                                                    <img src="assets/images/new_images/edit - Copy.png" alt
+                                                        class="img-fluid">
+                                                </a>
+                                            </button>
+                                        </div> -->
+                                    </div>
+                                    <div class="c_text">
+                                        S3 Sensor
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="capacity_sub_btn">
+                <a (click)="updateSensor()" >
+                    <button class="submit sub--btn" id="sub--btn">update</button>
+                </a>
+            </div>            
+
+            <div class="popup" *ngIf="updateCapacityPopup">
+                <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+                <div class="popup-body">
+                    <div class="popup-title">
+                        <span>Update Capacity</span>
+                        <button type="button" class="close-popup" (click)="closePopupFun()">×</button>
+                    </div>
+        
+                <form class="mt-5" [formGroup]="checkoutForm" (ngSubmit)="doSubmit()" >
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    </div>
+        
+                    <div class="text-center">
+                        <button type="submit" class="custom-btn green-btn small-btn" >Submit</button>
+                    </div>
+                 </form>
+                </div>
+            </div>
+
+            <div class="popup" *ngIf="updateSensorPopup">
+                <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+                <div class="popup-body">
+                    <div class="popup-title">
+                        <span>Update Sensor</span>
+                        <button type="button" class="close-popup" (click)="closePopupFun()">×</button>
+                    </div>
+        
+                <form class="mt-5" [formGroup]="checkoutForm" (ngSubmit)="doSubmitSensor()" >
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" formControlName="password">
+                    </div>
+        
+                    <div class="text-center">
+                        <button type="submit" class="custom-btn green-btn small-btn" >Submit</button>
+                    </div>
+                 </form>
+                </div>
+            </div>
+
+
+            <div class="popup" *ngIf="passwordIncorrectPopup">
+                <button type="button" class="popup-bg" (click)="closePopupFun()"></button>
+                <div class="popup-body">
+                    <div class="text-center">
+                        <img width="250px" src="assets/images/error.gif" class="your-voucher-pice" alt="">
+                    </div>
+                    <div class="text-center errorMsg">
+                        {{binFullError | translate }}
+                    </div>  
+        
+                    <div class="text-center">
+                        <button type="button" class="custom-btn green-btn small-btn" (click)="closePopupFun()" >Close</button>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- <div class="left_right">    
+                <div class="left">
+                    <div class="port_of_camera">
+                        <div class="camera_info">
+                            <div class="camera_img">
+                                <img src="assets/images/new_images/dslr-camera - Copy.png" alt class="img-fluid">
+                            </div>
+                            <div class="dropdown_content">
+                                <div class="dropdown_list">
+                                    <div class="dropdown">
+                                        <button class="dropbtn">PORT OF CAMERA
+                                            <i class="fa fa-caret-down"></i>
+                                        </button>
+                                        <div class="dropdown-content">
+                                            <a href="#">C270 HD WEBCAM</a>
+                                            <hr>
+                                            <a href="#">C270 HD WEBCAM</a>
+                                            <hr>
+                                            <a href="#">C270 HD WEBCAM</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="c_p_btn">
+                                    <button class="btn">
+                                        <a href="#">
+                                            <img src="assets/images/new_images/drop arrow.png" alt class="img-fluid">
+                                        </a>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="updation change_locatio">
+                        <div class="updation_image_btn">
+                            <div class="updation_img">
+                                <a href="#">
+                                    <img src="assets/images/new_images/download.png" alt class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="updation_mode_btn">
+                                <button class="btn touch">
+                                    <a href="#">
+                                    CHANGE LOCATION
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="updation">
+                        <div class="updation_image_btn">
+                            <div class="updation_img">
+                                <a href="#">
+                                    <img src="assets/images/new_images/qr-code - Copy.png" alt class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="updation_mode_btn">
+                                <button class="btn touch">
+                                    <a href="#">
+                                    UPDATE BARCODE FILE
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="updation">
+                        <div class="updation_image_btn">
+                            <div class="updation_img">
+                                <a href="#">
+                                    <img src="assets/images/new_images/update customer logo.png" alt class="img-fluid">
+                                </a>
+                            </div>
+                            <div class="updation_mode_btn">
+                                <button class="btn touch">
+                                    <a href="#">
+                                    UPDATE CUSTOMER LOGO
+                                    </a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            </div>
+            </div>
+    </div>
+</section>
+
+<!-- Start Virtual Keybord popup -->
+<div class="popup2" *ngIf="iskeyboardPopupOpen">
+    <button type="button" class="popup-bg" (click)="closeKeyBoard()"></button>
+    <div class="popup-body">
+        <div class="popup-title">
+            <span style="font-weight: 700;">Virtual Keyboard</span>
+            <button type="button" class="close-popup" (click)="closeKeyBoard()">×</button>
+        </div>
+        <div  class="numpad">
+            <div *ngFor="let row of keyboardRows">
+              <button *ngFor="let key of row" (click)="appendToInput(key)">{{ key }}</button>
+              <button *ngIf="row[row.length-1] == 0" (click)="backspace()">Backspace</button>
+            </div>
+          </div>
+    </div>
+</div>
+<!-- End Virtual Keybord popup -->
+</body>
+
+</html>
+iuhdbvjbvwehfvbljfvnlwyeibvjef vkjfnvwebvkf
