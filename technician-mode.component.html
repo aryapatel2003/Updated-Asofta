@@ -12,11 +12,7 @@
     <section class="asofta_tecnician">
         <div class="asofta_technician_mode">
             <div class="top_portion">
-                <!-- <div class="logo">
-                    <a href="#">
-                        <img src="./assets/assets/images/new_images/logoForm (1).png" alt="ASOFTA" class="img-fluid">
-                    </a>
-                </div> -->
+                <!-- <div class="logo"><a href="#"> <img src="./assets/assets/images/new_images/logoForm (1).png" alt="ASOFTA" class="img-fluid"> </a></div> -->
                 <div class="top_title">
                     <h2 class="header">Technician Mode</h2>
                 </div>
@@ -51,7 +47,7 @@
                 <div style="margin: 20px;">
                     <!-- ======Machine Information====== -->
                     <div class="machine_info">
-                        <div class="mi_portion">
+                        <div class="m_portion">
                             <a class="main_img">
                                 <img src="./assets/assets/images/new_images/processor - Copy.png" alt="ASOFTA"
                                     class=" img-fluid">
@@ -62,7 +58,8 @@
                             <div class="mi_text_1">
                                 <p class="mi_details">
                                     <span class="details_name">MACHINE CREATION DATE:</span>
-                                    <span class="details">{{machineView.createDate*1000 | date :'yyyy-MM-dd' }} </span><br>
+                                    <span class="details">{{machineView.createDate*1000 | date :'yyyy-MM-dd' }}
+                                    </span><br>
                                 </p>
                                 <p class="mi_details">
                                     <span class="details_name">CUSTOMER NAME :</span>
@@ -92,8 +89,7 @@
                                         }}</span><br>
                                 </p>
                                 <!-- <p class="mi_details"> <span class="details_name">CHANGE LOCATION:</span> <span
-                                class="details">{{machineView.machineId}}</span><br> 
-                                </p> -->
+                                class="details">{{machineView.machineId}}</span><br> </p> -->
                                 <p class="mi_details">
                                     <span class="details_name">LAST UPDATED DATE :</span>
                                     <span class="details">{{machineView.lastUpdateDate*1000 | date:'yyyy-MM-dd'
@@ -105,7 +101,7 @@
 
                     <!-- ====capacity===== -->
                     <div class="capacity_portion">
-                        <div class="mi_portion">
+                        <div class="m_portion">
                             <a class="main_img">
                                 <img src="./assets/assets/images/new_images/4412977.png" alt="ASOFTA" class="img-fluid">
                             </a>
@@ -172,12 +168,13 @@
                                 <img src="./assets/assets/images/new_images/employee-cards - Copy.png" alt
                                     class="object_img img-fluid">
                                 <div class="capacity_count_text">
-                                    <div class="capacity_container">
+                                    <div class="capacity_container" style="position: relative; top: 20px;">
                                         <input class="input_bar" type="text"
                                             [(ngModel)]="machineCapacityView.maxTransaction"
                                             (click)="openKeyboard('capacitymaxTransaction')">
                                     </div>
-                                    <h4 class="c_text">MAXIMUM NUMBER OF<br>CONTAINER ALLOWED <br> IN ONE
+                                    <h4 class="c_text" style="top: 29px;">MAXIMUM NUMBER OF<br>CONTAINER ALLOWED <br> IN
+                                        ONE
                                         TRANSACTION</h4>
                                 </div>
                             </div>
@@ -199,7 +196,7 @@
                         <button class="submit sub--btn" id="sub--btn">Update</button>
                     </a>
                     <div class="capacity_portion">
-                        <div class="mi_portion">
+                        <div class="m_portion">
                             <a class="main_img">
                                 <img src="./assets/assets/images/new_images/sensors.png" alt="ASOFTA" class="img-fluid">
                             </a>
@@ -243,7 +240,7 @@
                     </div>
                     <div class="capacity_sub_btn">
                         <a (click)="updateSensor()">
-                            <button class="submit sub--btn" id="sub--btn">update</button>
+                            <button class="submit sub--btn" id="sub--btn">Update</button>
                         </a>
                     </div>
 
@@ -340,7 +337,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="updation change_locatio">
+                    <div class="updation change_location">
                         <div class="updation_image_btn">
                             <div class="updation_img">
                                 <a href="#">

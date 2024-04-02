@@ -3,14 +3,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   overflow-x: hidden;
   font-family: "Roboto Condensed", sans-serif;
 }
+
 a {
   text-decoration: none;
   color: #ffffff;
 }
+
 .asofta_technician_mode {
   background-color: #faffe9;
   /* max-height: 1920px; */
@@ -23,20 +26,25 @@ a {
   /* border: 3px solid #A8BF3D; */
   border: 3px solid #000;
 }
+
 .asofta__tect {
   border: 3px solid #a8bf3d;
   border-radius: 17px;
   margin: 60px 30px 30px 30px;
 }
+
 .top_portion {
   display: flex;
 }
+
 .logo img {
   margin: 20px 0px 0px 30px;
 }
+
 .top_title {
   margin: auto;
 }
+
 .heading_portion {
   background-color: rgb(199, 203, 206);
   border-top-left-radius: 30px;
@@ -48,11 +56,13 @@ a {
   text-align: center;
   align-items: center;
 }
+
 .top_heading {
   font-weight: 700;
   font-size: 25px;
   text-align: center;
 }
+
 .line {
   height: 5px;
   width: 100%;
@@ -66,11 +76,13 @@ a {
   display: flex;
   margin: 30px 0px 0px 80px;
 }
+
 .access_btn_portion {
   display: flex;
   width: 100%;
   align-items: center;
 }
+
 .access_btn_img {
   width: 60px;
   height: 60px;
@@ -79,6 +91,7 @@ a {
   border-radius: 50%;
   text-align: center;
 }
+
 .access_btn_img img {
   width: 60px;
   height: 60px;
@@ -86,6 +99,7 @@ a {
   background-color: #f3f5eb;
   padding: 3px;
 }
+
 .access_btn .btn {
   width: 120px;
   padding: 10px 0px 10px 0px;
@@ -105,6 +119,7 @@ a {
   margin: 90px 0px 0px 40px;
   align-items: center;
 }
+
 .main_img {
   width: 80px;
   height: 70px;
@@ -116,14 +131,17 @@ a {
   padding: 15px 0px 0px 10px;
   z-index: 1;
 }
+
 .main_title {
   position: relative;
   right: 50px;
 }
+
 .main_img img {
   height: 50px;
   width: 50px;
 }
+
 .mi_heading_portion {
   background-color: rgb(199, 203, 206);
   border-top-left-radius: 30px;
@@ -135,11 +153,13 @@ a {
   /* text-align: center; */
   align-items: center;
 }
+
 .mi_heading {
   margin-left: 70px;
   font-weight: 700;
   font-size: 25px;
 }
+
 .main_line {
   height: 5px;
   width: 75%;
@@ -147,45 +167,55 @@ a {
   background-color: #464747;
   border-top-right-radius: 60px;
 }
+
 .mi_text {
   display: flex;
   width: 90%;
   margin: 50px 0px 0px 60px;
   gap: 30px;
 }
+
 .mi_text_1 {
   width: 50%;
   line-height: 40px;
 }
+
 .mi_text_2 {
   width: 50%;
   line-height: 40px;
 }
+
 .capacity_part {
   display: flex;
   width: 85%;
   margin: 90px 0px 0px 40px;
   align-items: center;
 }
+
 .details_name {
   font-size: 19px;
   font-weight: bolder;
 }
+
 .details {
   font-size: 18px;
   font-weight: 300px;
 }
+
 .capacity_count {
   margin: 50px 0px 0px 60px;
 }
+
 .capacity_image_btn {
   display: flex;
   width: 85%;
 }
+
 .object_info {
   display: flex;
   align-items: center;
 }
+
 .object_img {
   width: 100px;
   height: 100px;
@@ -194,16 +224,19 @@ a {
   border-radius: 50%;
   z-index: 1;
 }
+
 .object_img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
+
 .capacity_count_text {
   position: relative;
   top: 15px;
   right: 25px;
 }
+
 .capacity_container {
   display: flex;
   border: 2px solid #a8bf3d;
@@ -211,23 +244,28 @@ a {
   border-radius: 15px;
   width: 200px;
 }
+
 .c_storage_count {
   margin: auto;
 }
+
 .c_storage_number {
   font-size: 25px;
 }
+
 .c_p_btn {
   padding: 5px;
   border-radius: 50%;
   display: flex;
 }
+
 .c_p_btn .btn {
   height: 50px;
   width: 50px;
   border-radius: 50%;
   border: none;
 }
+
 .c_p_btn .btn img {
   width: 100%;
   height: 100%;
@@ -236,6 +274,7 @@ a {
   border-radius: 50%;
   background-color: #0c5800;
 }
+
 .c_text {
   text-align: center;
   font-size: 13px;
@@ -244,26 +283,32 @@ a {
   top: 10px;
   left: 5px;
 }
+
 .capacity_part_2 {
   margin-top: 50px;
 }
+
 .left_right {
   display: flex;
   margin: 200px 0px 0px 90px;
   width: 80%;
   gap: 25px;
 }
+
 .left {
   width: 50%;
   margin-top: 80px;
 }
+
 .right {
   width: 50%;
 }
+
 .camera_info {
   display: flex;
   align-items: center;
 }
+
 .camera_img {
   height: 100px;
   width: 100px;
@@ -272,11 +317,13 @@ a {
   background-color: #ffffff;
   box-shadow: 2px 2px 2px 2px;
 }
+
 .camera_img img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
+
 .dropdown_content {
   width: 350px;
   display: flex;
@@ -287,6 +334,7 @@ a {
   border-radius: 15px;
   padding: 3px;
 }
+
 .dropdown_list {
   margin: auto;
   text-align: end;
@@ -295,6 +343,7 @@ a {
 .dropdown_btn {
   display: none;
 }
+
 .dropbtn {
   font-size: 20px;
   font-weight: 700;
@@ -303,12 +352,14 @@ a {
   height: 100%;
   padding: 5px 5px;
 }
+
 .dropdown:hover .dropbtn {
   background-color: #464747;
   color: #ffffff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -328,22 +379,28 @@ a {
   display: block;
   text-align: left;
 }
+
 .dropdown-content a:focus {
   background-color: #464747;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 .updation {
   margin-top: 80px;
 }
+
 .change_location {
   margin-top: 140px;
 }
+
 .updation_image_btn {
   display: flex;
   align-items: center;
 }
+
 .updation_image_btn .updation_img {
   width: 100px;
   height: 100px;
@@ -353,12 +410,14 @@ a {
   box-shadow: 2px 2px 2px 2px;
   display: flex;
 }
+
 .updation_img img {
   height: 100%;
   width: 100%;
   border-radius: 50%;
   padding: 7px;
 }
+
 .updation_mode_btn .btn {
   width: 320px;
   background-color: #a8bf3d;
@@ -381,6 +440,7 @@ a {
   position: relative;
   z-index: 3;
 }
+
 .input_bar input {
   font-size: 16px;
   font-weight: 700;
@@ -392,6 +452,7 @@ a {
   width: 140px;
   text-align: center;
 }
+
 .capacity_sub_btn {
   /* background-color: red; */
   margin-top: 40px;
@@ -399,6 +460,7 @@ a {
   justify-content: center;
   padding: 5px;
 }
+
 .capacity_sub_btn .sub--btn {
   width: 120px;
   padding: 10px 0px 10px 0px;
@@ -419,6 +481,7 @@ a {
   width: 95%;
   margin-left: 65px;
 }
+
 .on-off .on-off-btn {
   background-color: #a8bf3d;
   display: flex;
@@ -427,9 +490,11 @@ a {
   padding: 10px 20px;
   border-radius: 20px;
 }
+
 .on-off .on-off-btn:hover {
   background-color: red;
 }
+
 /* End On-Off Sensor */
 
 /* Start Virtual Keybord popup */
@@ -438,6 +503,7 @@ a {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .numpad button {
   padding: 10px 35px;
   margin: 5px;
@@ -455,6 +521,7 @@ a {
   width: 100%;
   height: 100%;
   z-index: 11;
+
   .popup-bg {
     background: rgba(0, 0, 0, 0.5);
     border: 0;
@@ -465,6 +532,7 @@ a {
     left: 0;
     z-index: 0;
   }
+
   .popup-body {
     padding: 5px;
     background-color: var(--bg);
@@ -477,6 +545,7 @@ a {
     box-shadow: 0 11px 15px -7px #0003, 0 24px 38px 3px #00000024,
       0 9px 46px 8px #0000001f;
     border-radius: 10px;
+
     .popup-title {
       font-size: 15px;
       border-bottom: 1px solid #eee;
@@ -487,6 +556,7 @@ a {
       font-family: Arial, Helvetica, sans-serif;
     }
   }
+
   .close-popup {
     font-size: 30px;
     background: var(--red-bg);
@@ -506,4 +576,5 @@ a {
     justify-content: center;
   }
 }
+
 /* End Virtual Keybord popup */

@@ -32,6 +32,7 @@ body {
 a {
   text-decoration: none;
   color: var(--white-color);
+  cursor: pointer;
 }
 
 span {
@@ -41,7 +42,7 @@ span {
 .asofta_general_maintance {
   background-color: var(--bg-color);
   /* min-height: 1920px; */
-  /* max-height: 1920px; */
+  max-height: 1920px;
   max-width: 1080px;
   margin: 0 auto;
   border: 5px solid var(--black-color);
@@ -129,7 +130,7 @@ span {
 .m_parts_access {
   padding-right: 10px;
   border-right: 3px solid var(--light-green);
-  margin: 15px 0px;
+  margin: 15px 0px 30px;
   position: relative;
 }
 
@@ -287,7 +288,7 @@ span {
   font-size: 12px;
   font-weight: 700;
   position: absolute;
-  top: 52px;
+  top: 50px;
   right: 9px;
 }
 
@@ -371,7 +372,7 @@ span {
 }
 
 .resolve_btn {
-  margin: 15px 0px 35px 0px;
+  margin: 15px 0px 20px 0px;
   position: relative;
   left: 8%;
 }
@@ -380,7 +381,7 @@ span {
   color: white;
   font-size: 18px;
   font-weight: 700;
-  padding: 10px 30px;
+  padding: 10px 20px;
   background-color: var(--light-green);
   border: none;
   border-radius: 20px;
@@ -434,7 +435,7 @@ span {
 
 .error_btn {
   display: flex;
-  gap: 35%;
+  gap: 32%;
 }
 
 .common {
